@@ -1,0 +1,54 @@
+class Hexagon:
+    def __init__(self, side):
+        self.side = side
+
+    def calcArea(self):
+        self.area = 1.5 * 1.732 * self.side
+
+    def calcPeri(self):
+        self.peri = 6 * self.side
+
+    def calcAngleSum(self):
+        self.angleSum = 6 * 120
+
+    def display(self):
+        print("Area of hexagon:", self.area)
+        print("Perimeter of hexagon:", self.peri)
+        print("Sum of angles of hexagon:", self.angleSum)
+
+class Square:
+    def __init__(self, side):
+        self.side = side
+
+    def calcAreaSquare(self):
+        self.areaSquare = self.side * self.side
+
+    def calcPeriSquare(self):
+        self.periSquare = 4 * self.side
+
+    def display(self):
+        print("Area of square:", self.areaSquare)
+        print("Perimeter of square:", self.periSquare)
+
+# Get the last digit of CNIC
+lastDigit = int(input("Enter the last digit of your CNIC: "))
+
+# Create hexagon and square objects
+hexagon = Hexagon(lastDigit)
+square = Square(lastDigit + 1)
+
+# Display menu
+while True:
+    choice = input("\nEnter your choice (1 for hexagon, 2 for square, or any other key to exit): ")
+
+    if choice == '1':
+        hexagon.calcArea()
+        hexagon.calcPeri()
+        hexagon.calcAngleSum()
+        hexagon.display()
+    elif choice == '2':
+        square.calcAreaSquare()
+        square.calcPeriSquare()
+        square.display()
+    else:
+        break
